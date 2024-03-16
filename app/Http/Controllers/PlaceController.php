@@ -32,7 +32,7 @@ class PlaceController extends Controller
         return view('cafes');
     }
 
-    public function searchPlace(Request $request, string $placeType): void
+    public function searchPlace(Request $request, string $placeType): array
     {
         $locationResponse = $this->placesApiService->getCoordinatesByAddressAndRegion(
             $request->input(self::ADDRESS_PARAM),
@@ -40,11 +40,10 @@ class PlaceController extends Controller
         );
 
         /** @var PlaceDTO[] $nearbyPlacesData */
-        $nearbyPlacesData = $this->placesApiService->getNearbyPlaces(
+        return $this->placesApiService->getNearbyPlaces(
             $locationResponse,
             $request->input(self::RADIUS_PARAM),
             $placeType,
         );
-
     }
 }

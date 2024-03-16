@@ -16,8 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('place_type_id');
             $table->string('name');
             $table->string('address');
+            $table->string('latitude');
+            $table->decimal('longitude');
+            $table->decimal('BusinessStatus');
+            $table->decimal('cost', 5, 2);
             $table->decimal('rating', 5, 2);
-            $table->decimal('cost', 10, 2);
+            $table->decimal('num_rating');
             $table->timestamps();
 
             // Define foreign key constraint

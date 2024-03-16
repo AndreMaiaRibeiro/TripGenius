@@ -53,4 +53,43 @@ class PlaceDTO
 
         return $placeDTOList;
     }
+    public function getPlaceId(): string
+    {
+        return $this->placeId;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getTypes(): array
+    {
+        return $this->types;
+    }
+
+    public function getBusinessStatus(): string
+    {
+        return $this->businessStatus;
+    }
+
+    public function getLatitude(): float
+    {
+        return $this->latitude;
+    }
+
+    public function getLongitude(): float
+    {
+        return $this->longitude;
+    }
+
+    public function getRating(): float|int
+    {
+        return $this->rating;
+    }
+
+    public function getUserRatingTotal(): float|int
+    {
+        return $this->userRatingTotal;
+    }
 }

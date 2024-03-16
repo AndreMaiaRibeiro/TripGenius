@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\DTOs\PlaceDTO;
 use App\Providers\PlacesServiceProvider;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class RestaurantController extends PlaceController
@@ -26,10 +28,11 @@ class RestaurantController extends PlaceController
         return view(self::RENDER_VIEW);
     }
 
-    public function searchRestaurant(Request $request): void
+    public function searchRestaurant(Request $request): View
     {
-        parent::searchPlace($request, self::PLACE_TYPE_PARAM);
+        /** @var PlaceDTO[] $placesDTOList */
+        $placesDTOList = parent::searchPlace($request, self::PLACE_TYPE_PARAM);
 
-        echo 'funcionou caralho';
+        return view('displays.restaurantDisplay')->with('placesDTOList', $placesDTOList);
     }
 }
