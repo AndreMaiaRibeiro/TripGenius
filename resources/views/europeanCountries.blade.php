@@ -17,23 +17,4 @@
     </div>
 @endsection
 
-@push('styles')
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
 
-        .img-flag {
-            width: 250px;
-            height: 166px;
-            object-fit: cover;
-        }
-
-        @media (max-width: 768px) {
-            .col-3 {
-                padding: 0.5rem;
-            }
-        }
-    </style>
-@endpush

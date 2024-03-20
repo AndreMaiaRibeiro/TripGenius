@@ -38,16 +38,3 @@
 
 @endsection
 
-@push('styles')
-    <style>
-        .badge-success {
-            background-color: #28a745;
-        }
-        .badge-secondary {
-            background-color: #6c757d;
-        }
-        .fas.fa-star {
-            color: #ffc107;
-        }
-    </style>
-@endpush
