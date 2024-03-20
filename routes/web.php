@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarController;
 use App\Http\Controllers\CafeController;
+use App\Http\Controllers\CountryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,12 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/restaurants', [RestaurantController::class, 'index']);
+Route::get('/european-countries', [CountryController::class, 'showEuropeanCountries']);
+Route::get('/select-country', [CountryController::class, 'selectCountry'])->name('country.select');
+Route::get('/select-country/{countryName}', [CountryController::class, 'selectCountry'])->name('country.select');
+
+
+Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
 Route::post('/restaurants/search', [RestaurantController::class, 'searchRestaurant'])->name('restaurants.search');
 
 Route::get('/cafes', [CafeController::class, 'index']);
