@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/european-countries', [CountryController::class, 'showEuropeanCountries']);
-Route::get('/select-country', [CountryController::class, 'selectCountry'])->name('country.select');
+//TODO Route::get('/select-country', [CountryController::class, 'selectCountry'])->name('country.select');
 Route::get('/select-country/{countryName}', [CountryController::class, 'selectCountry'])->name('country.select');
 
 

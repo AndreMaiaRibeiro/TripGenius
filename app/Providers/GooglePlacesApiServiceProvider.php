@@ -45,6 +45,7 @@ class GooglePlacesApiServiceProvider implements ApiInterface
     {
         return self::BASE_URL . self::GEOCODE_URI;
     }
+
     public static function getPlaceNearbySearchUrl(): string
     {
         return self::BASE_URL . self::PLACE_NEARBY_SEARCH_URI;

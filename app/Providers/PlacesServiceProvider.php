@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\DTOs\PlaceDTO;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\TransferStats;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Session;
 use Psr\Http\Message\ResponseInterface;
 use SKAgarwal\GoogleApi\Exceptions\GooglePlacesApiException;
 
@@ -105,15 +107,6 @@ class PlacesServiceProvider
         // $this->client->get(self::PLACE_PHOTO_URL, $options);
 
         return (string)$url;
-    }
-
-    public function placeAutoComplete(string $input, array $params = [])
-    {
-        $params['input'] = $input;
-
-        //$response = $this->makeRequest(self::PLACE_AUTOCOMPLETE_URL, $params);
-
-        //return $this->convertToCollection($response, 'predictions');
     }
 
     private function prepareNearbySearchParams(string $location, string $radius, array $params): array
