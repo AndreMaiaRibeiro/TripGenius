@@ -25,20 +25,7 @@ class RestaurantController extends PlaceController
      */
     public function index(): Renderable
     {
-        $countries = [
-            'FR' => 'France',
-            'DE' => 'Germany',
-            'IT' => 'Italy',
-            'ES' => 'Spain',
-            'PT' => 'Portugal',
-            'PL' => 'Poland',
-            'GR' => 'Greece',
-            'HU' => 'Hungary',
-            'SE' => 'Sweden',
-            'FI' => 'Finland',
-            // missing the rest of the countries(for now Europe only)
-        ];
-        return view(self::RENDER_VIEW, ['countries' => $countries]);
+        return view(self::RENDER_VIEW);
     }
 
     public function searchRestaurant(Request $request): View

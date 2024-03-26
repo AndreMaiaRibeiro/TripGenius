@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\PlacesServiceProvider;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PlaceController extends Controller
 {
@@ -36,7 +37,7 @@ class PlaceController extends Controller
     {
         $locationResponse = $this->placesApiService->getCoordinatesByAddressAndRegion(
             $request->input(self::ADDRESS_PARAM),
-            $request->input(self::REGION_PARAM)
+            Session::get('sessionCountry'),
         );
 
         /** @var PlaceDTO[] $nearbyPlacesData */
