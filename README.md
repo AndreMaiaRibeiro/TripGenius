@@ -1,18 +1,83 @@
-# TripGenius
+# TripGenius Installation Guide
 
-TripGenius is a user-friendly travel planning platform developed as a university project. It helps users plan their vacations easily and efficiently.
+Welcome to the installation guide for TripGenius. Follow the steps below to set up your local development environment.
 
-## Features
+## Prerequisites
+Ensure you have the following installed on your system:
+- PHP 7.4 or higher
+- [Composer](https://getcomposer.org/)
 
-- **Personalized Recommendations**: Input your preferences, budget, and destination, and TripGenius will create a customized itinerary for you.
-- **All-In-One Planning**: From booking flights and hotels to finding restaurants and activities, TripGenius handles every aspect of your trip.
-- **AI Assistance**: Powered by AI, TripGenius ensures that your recommendations match your interests perfectly.
-- **Safety Considerations**: We take safety seriously, considering factors like crime rates in your desired destinations.
+You can check your PHP version by running:
+```bash
+php -v
+```
 
-## Contributing
+And Composer by running:
+```bash
+composer -v
+```
 
-We welcome contributions from the university community to enhance TripGenius. Feel free to submit ideas, bug fixes, or new features through GitHub.
+## Installation
 
-## Contact Us
+1. **Clone the Repository**
 
-For questions or support, reach out to the developer at maiadasila@coventry.ac.uk
+   Use the following command to clone the TripGenius repository to your local machine:
+
+   ```bash
+   git clone https://github.coventry.ac.uk/maiadasila/TripGenius.git
+   ```
+
+2. **Navigate to the Project Directory**
+
+   After cloning the repository, navigate into the project directory:
+
+   ```bash
+   cd tripgenius
+   ```
+
+3. **Install Dependencies**
+
+   Install all necessary PHP dependencies using Composer:
+
+   ```bash
+   composer install
+   ```
+
+4. **Environment Setup**
+
+   Copy the example environment file to create a new `.env` file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Then, open the `.env` file and enter your database credentials.
+
+5. **Application Key**
+
+   Generate a unique application key with Artisan:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+6. **Database Migration and Seeding**
+
+   Run the database migrations and (optionally) seed the database:
+
+   ```bash
+   php artisan migrate --seed
+   ```
+
+7. **Start the Development Server**
+
+   Launch the Laravel development server:
+
+   ```bash
+   php artisan serve
+   ```
+
+   Your application will now be running at 
+   ```bash
+   http://localhost:8000
+   ```
